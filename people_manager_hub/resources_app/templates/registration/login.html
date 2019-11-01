@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>People Manager Hub Login Page</title>
+    <link rel="stylesheet" href="{% static 'resources_app/css/login.css' %}">
+  </head>
+  <body>
+    <div class="login-box">
+      <div id="circle1" class="circle"></div>
+      <div class="logo-container">
+        <img src="{% static 'resources_app/assets/logo.png' %}" alt="">
+      </div>
+      <h2>People Manager Hub</h2>
+      {% if form.errors %}
+        <p class="error-message">Incorrect username or password</p>
+      {% endif %}
+      <form method="post">
+        {% csrf_token %}
+        <input class="input" type="text" name="username" autofocus required id="id_username" placeholder="Email address">
+        <input type="password" name="password" required id="id_password" placeholder="Password">
+        <button type="submit">Login</button>
+      </form>
+      <div id="circle2" class="circle"></div>
+    </div>
+  </body>
+</html>

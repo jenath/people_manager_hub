@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://emf-assets.s3.amazonaws.com/media/21/people-manager-hub-login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Montserrat;
+}
+
+.login-box {
+  text-align: center;
+  background-color: white;
+  width: 40em;
+  height: 25em;
+  position: relative;
+}
+
+.login-box .logo-container {
+  height: 3em;
+  margin-top: 2.4em;
+}
+
+.login-box .logo-container img {
+  height: 100%;
+}
+
+.login-box h2 {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 36pt;
+  color: #485062;
+  font-weight: Bold;
+}
+
+.login-box form {
+  display: inline-block;
+}
+
+input, button {
+  width: 24em;
+  border: 2px solid lightgray;
+  border-radius: 36px;
+  text-align: center;
+  display: block;
+  padding: 0.6em;
+  margin: 1.2em;
+  font-size: 1em;
+  font-family: Montserrat;
+}
+
+button {
+  background-color: #495061;
+  border-color: #495061;
+  color: white;
+  width: 12em;
+  margin-top: 1.6em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#circle1 {
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: #FCBC15;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 15px;
+}
+
+#circle2 {
+  height: 160px;
+  width: 160px;
+  border-radius: 80px;
+  position: absolute;
+  right: -100px;
+  bottom: -60px;
+  background-color: #34D888;
+}
+
+.error-message {
+  color: red;
+  margin: 0;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}

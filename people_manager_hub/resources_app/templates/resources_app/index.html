@@ -1,0 +1,66 @@
+{% extends 'resources_app/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block extrastyles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'resources_app/css/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+{% if homepage %}
+<div>
+  <div class="backdrop">
+    <h1 class="title">{{ homepage.title }}</h1>
+  </div>
+  <img class="splodge" src="{% static 'resources_app/assets/splodge.png' %}" alt="">
+</div>
+<section class="index">
+  <p class="description">{{ homepage.description }}</p>
+  <hr>
+  <div class="sixty-percent-width">
+    <h2>{{ homepage.instruction_title }}</h2>
+    <p class="instruction-text">{{ homepage.instruction_text }}</p>
+  </div>
+
+  <section class='images'>
+{% if resource_pages %}
+{% for resource_page in resource_pages %}
+    <div>
+      <div class="image-container">
+        <img src="{{ resource_page.animated_gif }}" alt="photo">
+        <img src="{{ resource_page.banner_image }}" alt="photo">
+      </div>
+      <div class="desc-text-container">
+        <p class="colour{{ forloop.counter }}">{{ resource_page.title }}</p>
+      </div>
+      <div class="discover-center">
+        <a class="discover background-colour{{ forloop.counter }}" href="{% url 'resources_app:section' resource_page.id %}">Discover</a>
+      </div>
+    </div>
+{% endfor %}
+{% endif %}
+  </section>
+
+  <!-- Popular Resources - Resource Module -->
+  {% for resource_module in homepage.resourcemodule_set.all %}
+    <section class="resource-module">
+      <h2>{{ resource_module.title }}</h2>
+      <p class="instruction-text">{{ resource_module.description }}</p>
+      {% for resource in resource_module.resources.all %}
+        <div class="resource">
+          <div class="resource-image">
+            <img src="{% get_resource_icon resource %}" alt="" >
+          </div>
+          <div class="resource-description">
+            <h3 class="resource-title">{{ resource.title }}</h3>
+            <p class="resource-text">{{ resource.text }}</p>
+            <a class="resource-link" href="{{ resource.link }}" target="_blank">{{ resource.title }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+
+{% endif %}
+</section>
+{% endblock %}

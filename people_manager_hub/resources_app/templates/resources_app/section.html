@@ -1,0 +1,71 @@
+{% extends 'resources_app/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block extrastyles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'resources_app/css/section.css' %}" />
+{% endblock %}
+
+{% block content %}
+{% if resource_page %}
+
+{% for page in resource_pages %}
+  {% if page.id == resource_page.id %}
+  <div class="title background-colour{{ forloop.counter }}"><div>{{ resource_page.title }}</div></div>
+  <div class="background-image{{ forloop.counter }} background-settings" alt=""></div>
+  {% endif %}
+{% endfor %}
+
+
+<section class="resource-page">
+  <p class="description">{{ resource_page.description }}</p>
+  <hr>
+  <img class="banner_image" src="{{ resource_page.banner_image }}" alt="photo">
+
+  {#--- all resources container ---#}
+
+  {% for resource_module in resource_page.resourcemodule_set.all %}
+  <section class="resource-module">
+    <h2>{{ resource_module.title }}</h2>
+    <p class="instruction-text">{{ resource_module.description }}</p>
+      {% for resource in resource_module.resources.all %}
+      <div class="resource">
+        <div class="resource-image">
+          <img src="{% get_resource_icon resource %}" alt="" >
+        </div>
+        <div class="resource-description">
+          <h3 class="resource-title">{{ resource.title }}</h3>
+          <p class="resource-text">{{ resource.text }}</p>
+          <a class="resource-link" href="{{ resource.link }}" target="_blank">{{ resource.title }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  {#--- end all resources container ---#}
+
+  <hr>
+
+  {#--- links to other pages ---#}
+  <section class='images'>
+    {% if resource_pages %}
+    {% for resource_page in resource_pages %}
+        <div>
+          <div class="image-container">
+            <img src="{{ resource_page.animated_gif }}" alt="photo">
+            <img src="{{ resource_page.banner_image }}" alt="photo">
+          </div>
+          <div class="desc-text-container">
+            <p class="colour{{ forloop.counter }}">{{ resource_page.title }}</p>
+          </div>
+          <div class="discover-center">
+            <a class="discover background-colour{{ forloop.counter }}" href="{% url 'resources_app:section' resource_page.id %}">Discover</a>
+          </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+</section>
+{% endif %}
+{% endblock %}

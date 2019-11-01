@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F5F5F5;
+}
+
+.title {
+  padding: 50px 50px 50px;
+  height: 300px;
+  margin: 0px;
+  color: white;
+  font-size: 48pt;
+  font-weight: Normal;
+}
+
+.title div {
+  max-width: 60%;
+}
+
+.background-settings {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: -250px;
+  width: 100%;
+  height: 400px;
+  padding: 0 300px;
+  box-sizing: border-box;
+}
+
+.background-image1 {
+  background-image: url("../assets/encouraging_wellbeing_header.png");
+}
+
+.background-image2 {
+  background-image: url("../assets/performance-enablement-header.png");
+}
+
+.background-image3 {
+  background-image: url("../assets/managing-workflow-and-resources-header.png");
+}
+
+.background-image4 {
+  background-image: url("../assets/accessing_training_and_development_opportunities_header.png");
+}
+
+.resource-page {
+  margin: -200px 100px 0px 100px;
+}
+
+.banner_image {
+  display: block;
+  margin: 50px auto;
+}
+
+h2 {
+  font-size: 38pt;
+  color: #485062;
+  font-weight: Bold;
+}
+
+.resource-module {
+  margin-bottom: 50px;
+  float: left;
+}
+
+.anchor {
+  text-decoration: none;
+}

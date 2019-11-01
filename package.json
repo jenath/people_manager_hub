@@ -1,0 +1,24 @@
+{
+  "name": "people-manager-hub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npx browser-sync start --files './templates/registration/*.html, resources_app/static/resources_app/css/*.css' --proxy 127.0.0.1:8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emfoundation/people-manager-hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emfoundation/people-manager-hub/issues"
+  },
+  "homepage": "https://github.com/emfoundation/people-manager-hub#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  },
+  "keywords": [],
+  "description": ""
+}
