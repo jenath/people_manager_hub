@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for people_manager_hub project.
 
@@ -81,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'people_manager_hub_db',
         'USER': 'people_manager_hub_user',
-        'PASSWORD': 'H)WTE5hH32.u5+\V',
+        'PASSWORD': 'pass',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -130,3 +132,5 @@ STATIC_ROOT = 'static'
 # Django auth settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())
