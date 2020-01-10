@@ -1,1 +1,1 @@
-web: gunicorn people_manager_hub.wsgi
+web: gunicorn resources_app.wsgi
