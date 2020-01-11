@@ -1,1 +1,1 @@
-web:gunicorn people_manager_hub:app
+web: gunicorn people_manager_hub:app
